@@ -1,0 +1,24 @@
+﻿<Window x:Class="MisFicheros.Actualizar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MisFicheros"
+        mc:Ignorable="d"
+        Title="Actualizar" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="nom"  HorizontalAlignment="Left" Margin="319,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Nº hermanos" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="her"  HorizontalAlignment="Left" Margin="379,64,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Actualizar" HorizontalAlignment="Left" Margin="300,64,0,0" Grid.Row="2" VerticalAlignment="Top" Click="refrescar"/>
+    </Grid>
+</Window>

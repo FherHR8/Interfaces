@@ -1,0 +1,17 @@
+Codigo: 1
+Nombre: Anacleto
+Edad: 25
+Color: Rosa
+Sexo: mujer
+¿Mayor de edad? True
+Deportes: System.Windows.Controls.ListBoxItem: Futbol 
+
+Codigo: 2
+Nombre: Artemisa
+Edad: 25
+Color: Azul
+Sexo: mujer
+¿Mayor de edad? True
+Deportes: System.Windows.Controls.ListBoxItem: Baloncesto 
+System.Windows.Controls.ListBoxItem: Ciclismo 
+

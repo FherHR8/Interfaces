@@ -1,0 +1,19 @@
+﻿<Window x:Class="Obligatorio2.acercade" Background="Gray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obligatorio2"
+        mc:Ignorable="d"
+        Title="acercade" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/portada.jpg"/>
+        </Grid.Background>
+        <Label Margin="270,0,0,0" FontSize="50">ACERCA DE</Label>
+        <TextBlock Margin="10,100,10,0" FontSize="30">CREADOR: Fernando Herrero Rodríguez</TextBlock>
+        <TextBlock Margin="10,200,10,0" FontSize="15">AGRADECIMIENTOS ESPECIALES A: Juan Díaz (Pildoras Informaticas), 
+            Chat GPT, Alumnos de 2º de DAM Salesianos</TextBlock>
+        <TextBlock Margin="10,300,10,0" FontSize="19">MENSAJE OCULTO: Isa, no nos pongas el examen, no lo merecemos, somos buenos chicos.</TextBlock>
+    </Grid>
+</Window>

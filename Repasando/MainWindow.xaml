@@ -1,0 +1,118 @@
+﻿<Window x:Class="Repasando.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Repasando"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000">
+    <Window.Resources>
+        <Style x:Key="estilo" TargetType="Menu">
+            <Setter Property="Background" Value="Orange"></Setter>
+            <Setter Property="Foreground" Value="Blue"></Setter>
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+        </Style>
+        <LinearGradientBrush x:Key="gradiante">
+            <GradientStop Offset="0" Color="LightGreen"></GradientStop>
+            <GradientStop Offset="1" Color="Green"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock="Top" Width="auto" Height="20" Style="{StaticResource estilo}">
+                <MenuItem Header="Acciones">
+                    <MenuItem x:Name="abre" Header="Abrir.txt" Click="abrir" >
+                        <MenuItem.Icon>
+                            <Image Source="/abrir.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="guarda" Header="Guardar.txt" Click="guardar" >
+                        <MenuItem.Icon>
+                            <Image Source="/guardar.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Otros">
+                    <MenuItem x:Name="escribe" Header="Escribir fichero" Click="escribir" >
+                        <MenuItem.Icon>
+                            <Image Source="/escribir.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="muestra" Header="Mostrar" Click="mostrar" >
+                        <MenuItem.Icon>
+                            <Image Source="/mostrar.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem x:Name="ayudar" Header="Ayuda" Click="ayuda" >
+                    <MenuItem.Icon>
+                        <Image Source="/ayuda.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </Menu>
+            <StackPanel DockPanel.Dock="Bottom" Height="70" Width="auto" Background="Gainsboro">
+                <Button x:Name="valida" Content="VALIDAR" Click="validar" Background="White"/>
+
+            </StackPanel>
+            <StackPanel Width="475" DockPanel.Dock="Left" Background="LightCyan">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Nombre" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Content="Mayor de edad" Grid.Column="0" Grid.Row="1"></Label>
+                    <Label Content="Sexo" Grid.Column="0" Grid.Row="2"></Label>
+                    <Label Content="Edad" Grid.Column="0" Grid.Row="3"></Label>
+                    <TextBox x:Name="nombre" Grid.Column="1" Grid.Row="0"></TextBox>
+                    
+                    <TextBox x:Name="edad" Grid.Column="1" Grid.Row="3" ></TextBox>
+                    <CheckBox x:Name="mayor" Grid.Column="1" Content="Mayor de edad" HorizontalAlignment="Left" Margin="72,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <RadioButton x:Name="hombre" Content="Hombre" Width="75"/>
+                        <RadioButton x:Name="mujer" Content="Mujer" Width="75"/>
+                    </StackPanel>
+                </Grid>
+                <TextBox x:Name="numero"  TextWrapping="Wrap" Text="numero" Width="120"/>
+                <TextBox x:Name="nomb"  TextWrapping="Wrap" Text="nom" Width="120"/>
+            </StackPanel>
+            <StackPanel Width="475" DockPanel.Dock="Right" Background="Beige">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Color" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Deporte" Grid.Row="1" Grid.Column="0"/>
+                    <ComboBox Width="120" Grid.Row="0" Grid.Column="1" x:Name="color" SelectedIndex="-1" SelectionChanged="pepito">
+                        <ComboBoxItem>Azul</ComboBoxItem>
+                        <ComboBoxItem>Rosa</ComboBoxItem>
+                    </ComboBox>
+                    <ListBox x:Name="deportes"  Height="100" Grid.Row="1" Grid.Column="1" SelectionMode="Multiple">
+                        <ListBoxItem>Baloncesto</ListBoxItem>
+                        <ListBoxItem>Futbol</ListBoxItem>
+                        <ListBoxItem>Ciclismo</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <TextBlock x:Name="copia" TextWrapping="Wrap" Text="Aquí nos pondrá el texto de un txt abierto" Height="300">
+                    <TextBlock.Background>
+                        <StaticResource ResourceKey="gradiante"></StaticResource>
+                    </TextBlock.Background>
+                </TextBlock>
+                <Button x:Name="consulta" Content="Button" Click="consultar"/>
+                <TextBox x:Name="resultado" TextWrapping="Wrap" Text="" Width="200" Height="130"/>
+            </StackPanel>
+            <Label Content="MEDIO"></Label>
+        </DockPanel>
+    </Grid>
+</Window>

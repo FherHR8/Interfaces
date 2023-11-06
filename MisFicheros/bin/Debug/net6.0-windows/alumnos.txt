@@ -1,0 +1,14 @@
+Nombre: Fernando
+Fecha: 01/11/2023 0:00:00
+Hermanos: 3
+Sexo: Hombre
+¿Casado?: False
+Ciclo: DAM
+Colegio: System.Windows.Controls.ListBoxItem: Salesianos System.Windows.Controls.ListBoxItem: Venancio 
+Nombre: Jacinta
+Fecha: 04/10/2023 0:00:00
+Hermanos: 5
+Sexo: Mujer
+¿Casado?: True
+Ciclo: ASIR
+Colegio: System.Windows.Controls.ListBoxItem: Salesianos 

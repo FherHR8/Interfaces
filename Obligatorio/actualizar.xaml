@@ -1,0 +1,79 @@
+﻿<Window x:Class="Obligatorio2.actualizar" Background="ForestGreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obligatorio2"
+        mc:Ignorable="d"
+        Title="actualizar" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="consulta">
+            <Grid.Background>
+                <ImageBrush ImageSource="/tres.jpg"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="1" Content="ALTA:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="2" Content="C.empleado:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="3" Content="Especialidad:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="4" Content="Titulación:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="5" Content="Premios:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="6" Content="Comentarios:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <Label Grid.Column="0" Grid.Row="7" Content="Categoría.L:" Margin="20,0,0,0" VerticalContentAlignment="Center" FontSize="16"></Label>
+            <TextBox IsEnabled="False" x:Name="alta"  Grid.Column="1" Grid.Row="1" Height="30"></TextBox>
+            <TextBox IsEnabled="False" x:Name="codigo" Grid.Column="1" Grid.Row="2" Height="30"></TextBox>
+            <TextBox x:Name="especialidad"  Grid.Column="1" Grid.Row="3" Height="30"></TextBox>
+            <TextBox x:Name="titulacion" Grid.Column="1" Grid.Row="4" Height="30"></TextBox>
+            <TextBox x:Name="premios" Grid.Column="1" Grid.Row="5" Height="30"></TextBox>
+            <TextBox x:Name="comentarios" Grid.Column="1" Grid.Row="6" Height="30"></TextBox>
+            <TextBox x:Name="categoria" Grid.Column="1" Grid.Row="7" Height="30"></TextBox>
+
+            <Label FontSize="26" FontWeight="Bold" Grid.Column="0" Grid.Row="0" Content="ESCRIBE EL NOMBRE A ACTUALIZAR" Grid.ColumnSpan="4" Margin="20,0,0,0" Foreground="ForestGreen" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+            <TextBox Background="Gold" x:Name="nombre"  FontSize="16" FontWeight="Bold" Grid.Column="4" Grid.Row="0" Margin="20,0,0,0" Width="230" Height="30" Text="" Grid.ColumnSpan="2"/>
+
+            <Label FontSize="16" Grid.Column="2" Grid.Row="1" Content="ANTIGÜEDAD" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <TextBox Grid.Column="3" Grid.Row="1" Width="100" Height="30" FontSize="16"></TextBox>
+            <Label FontSize="18" FontWeight="Bold" Grid.Column="2" Grid.Row="2" Content="Datos de nómina:" Foreground="ForestGreen" Grid.ColumnSpan="4" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <Label FontSize="16" Grid.Column="2" Grid.Row="3" Content="SALARIO:" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <Label FontSize="16" Grid.Column="2" Grid.Row="4" Content="departamento:" Grid.ColumnSpan="2" Margin="15,0,0,0" VerticalContentAlignment="Center"></Label>
+            <ComboBox x:Name="departamento" Grid.Column="2" Grid.Row="5" Height="30" Width="100" SelectedIndex="0">
+                <ComboBoxItem>Informatica</ComboBoxItem>
+                <ComboBoxItem>Administración</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="actualiza"  Grid.Column="2" Grid.Row="6" Content="ACTUALIZA LOS DATOS" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="200" Height="60" Foreground="Red" Background="Gray" FontSize="17" Click="renovar"></Button>
+            <Button x:Name="observar" Grid.Column="5" Grid.Row="6" Content="Ver" Grid.RowSpan="2" Width="100" Height="60" Foreground="Red" Background="Gray" FontSize="17" Click="volver"></Button>
+            <Label IsEnabled="False" x:Name="antigüedad"  FontSize="16" Grid.Column="3" Grid.Row="1" Content="" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <Label FontSize="16" Grid.Column="3" Grid.Row="3" Content="" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <Label FontSize="16" Grid.Column="4" Grid.Row="4" Content="grado:" Grid.ColumnSpan="4" Margin="20,0,0,0" VerticalContentAlignment="Center"></Label>
+            <ComboBox SelectedIndex="0" x:Name="grado"  Grid.Column="4" Grid.Row="5" Height="30" Width="100">
+                <ComboBoxItem>Auxiliar</ComboBoxItem>
+                <ComboBoxItem>Jefe</ComboBoxItem>
+            </ComboBox>
+            <Label FontSize="13" Grid.Column="4" Grid.Row="1" Content="A Tiempo Completo:" Margin="5,0,0,0" VerticalContentAlignment="Center" ></Label>
+            <Label FontSize="16" Grid.Column="4" Grid.Row="3" Content="%" Margin="0,0,20,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ></Label>
+            <ComboBox x:Name="completo"  Grid.Column="5" Grid.Row="1" Height="30" Width="100" SelectedIndex="0">
+                <ComboBoxItem>SI</ComboBoxItem>
+                <ComboBoxItem>NO</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="irpf" Grid.Column="5" Grid.Row="3" Height="30" Width="100"></TextBox>
+            <TextBox x:Name="salario" Grid.Column="3" Grid.Row="3" Height="30" Width="100"></TextBox>
+        </Grid>
+    </Grid>
+</Window>

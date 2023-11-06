@@ -1,0 +1,24 @@
+﻿<Window x:Class="Obligatorio2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obligatorio2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFBBBABA">
+    <DockPanel Background="Transparent">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Archivo">
+                <MenuItem x:Name="alta" Header="Alta Datos" Click="Alta" ></MenuItem>
+                <MenuItem x:Name="consulta" Header="Consulta Datos" Click="Consulta"></MenuItem>
+                <MenuItem x:Name="actualizar" Header="Actualizar Datos" Click="Actualizar"></MenuItem>
+                <MenuItem x:Name="salir" Header="Salir" Click="Salir"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Ayuda">
+                <MenuItem x:Name="ayuda" Header="Ver Ayuda" Click="Ayuda"></MenuItem>
+                <MenuItem x:Name="acerca" Header="Acerca de" Click="Acerca"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Text="GESTION DE LA EMPRESA" Width="600" Height="300" Margin="0,0,0,0" Padding="20" FontSize="96" HorizontalAlignment="Center" Background="#FFD7E6E6"/>
+    </DockPanel>
+</Window>
