@@ -69,8 +69,8 @@ namespace OblligatorioInterfaces3
                 MessageBox.Show("El email no es válido");
                 return false;
             }
-            else if(string.IsNullOrWhiteSpace(contrasena) || (!contrasena.Equals(repetir))){
-                MessageBox.Show("La contraseña no coincide con la repetición o está vacía");
+            else if(string.IsNullOrWhiteSpace(contrasena) || (!contrasena.Equals(repetir) || (contrasena.Length<8))){
+                MessageBox.Show("La contraseña no coincide con la repetición o tiene menos de 8 caracteres");
                 return false;
             }
             return ok;

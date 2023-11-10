@@ -8,16 +8,24 @@
         Title="Entrar" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="145*"></RowDefinition>
+            <RowDefinition Height="145*"></RowDefinition>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="118*"/>
         </Grid.RowDefinitions>
-        <Label>
+        <Label Margin="0,0,0,144" Grid.RowSpan="2">
             <Label.Background>
                 <ImageBrush ImageSource="/logo.png"></ImageBrush>
             </Label.Background>
         </Label>
         <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold">Bienvenido a Salesianos</TextBlock>
-        <TextBlock Grid.Row="2" Text="hola" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+        
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="300" Header="Usuario"></DataGridTextColumn>
+                <DataGridTextColumn Width="300" Header="Email"></DataGridTextColumn>
+                <DataGridTextColumn Width="200" Header="Puntuación"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

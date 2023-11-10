@@ -25,6 +25,7 @@ namespace OblligatorioInterfaces3
         {
             InitializeComponent();
         }
+        
         private bool login ()
         {
             bool login = false;
@@ -40,6 +41,7 @@ namespace OblligatorioInterfaces3
                 {
                     con = lector["password"].ToString();
                     ema = lector["email"].ToString();
+                    
                     return true;
                 }
                 else
@@ -49,13 +51,40 @@ namespace OblligatorioInterfaces3
             }
             return login;
         }
-
+        private bool admin(Entrar en)
+        {
+            bool es= false;
+            BaseDatos b= new BaseDatos();
+            string ema = email.Text;
+            string consulta = "SELECT rol from users where email like '" + email.Text + "'";
+            if (b.AbrirConectar())
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, b.Conectar);
+                MySqlDataReader lector = cmd.ExecuteReader();
+                if (lector.Read())
+                {
+                    ema = lector["rol"].ToString();
+                    MessageBox.Show(ema);
+                    if (ema.Equals("Administrador"))
+                    {
+                        es = true;
+                    }
+                    
+                }
+                
+            }
+            return es;
+        }
         private void entrar(object sender, RoutedEventArgs e)
         {
             if (login())
             {
                 Entrar en = new Entrar();
                 en.Show();
+                if(admin(en))
+                {
+                    en.visible.Visibility = Visibility.Visible;
+                }  
             } 
         }
         private void registrarse(object sender, RoutedEventArgs e)

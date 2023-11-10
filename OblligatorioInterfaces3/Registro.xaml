@@ -51,6 +51,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Codigo Centro" VerticalAlignment="Top" Width="180"/>
         <TextBox x:Name="Contrasena" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Contraseña" VerticalAlignment="Top" Width="180"/>
+        <TextBlock HorizontalAlignment="Center" Margin="140,40,0,0" Grid.Row="4" TextWrapping="Wrap" Text="(8 caracteres al menos)" VerticalAlignment="Top" Width="180" Foreground="red"/>
         <TextBox x:Name="Repetir" HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Repetir Contraseña" VerticalAlignment="Top" Width="180"/>
         <Button Width="100" Height="30" Content="ENTRAR" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="entrar"/>
