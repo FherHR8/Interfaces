@@ -69,7 +69,7 @@ namespace MisFicheros {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MisFicheros;component/actualizar.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MisFicheros;V1.0.0.0;component/actualizar.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Actualizar.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

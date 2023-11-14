@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,27 +23,28 @@ namespace OblligatorioInterfaces3
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
         }
-        
-        private bool login ()
+
+        private bool login()
         {
             bool login = false;
             BaseDatos b = new BaseDatos();
             string ema = "";
             string con = "";
-            string consulta = "SELECT password,email from users where password like '" +contrasena.Text + "' and email like '"+email.Text + "'";
+            string consulta = "SELECT password,email from users where password like '" + contrasena.Text + "' and email like '" + email.Text + "'";
             if (b.AbrirConectar())
             {
                 MySqlCommand cmd = new MySqlCommand(consulta, b.Conectar);
                 MySqlDataReader lector = cmd.ExecuteReader();
-                if(lector.Read())
+                if (lector.Read())
                 {
                     con = lector["password"].ToString();
                     ema = lector["email"].ToString();
-                    
+
                     return true;
                 }
                 else
@@ -53,8 +56,8 @@ namespace OblligatorioInterfaces3
         }
         private bool admin(Entrar en)
         {
-            bool es= false;
-            BaseDatos b= new BaseDatos();
+            bool es = false;
+            BaseDatos b = new BaseDatos();
             string ema = email.Text;
             string consulta = "SELECT rol from users where email like '" + email.Text + "'";
             if (b.AbrirConectar())
@@ -69,9 +72,9 @@ namespace OblligatorioInterfaces3
                     {
                         es = true;
                     }
-                    
+
                 }
-                
+
             }
             return es;
         }
@@ -81,11 +84,11 @@ namespace OblligatorioInterfaces3
             {
                 Entrar en = new Entrar();
                 en.Show();
-                if(admin(en))
+                if (!admin(en))
                 {
-                    en.visible.Visibility = Visibility.Visible;
-                }  
-            } 
+                    en.data.Visibility = Visibility.Hidden;
+                }
+            }
         }
         private void registrarse(object sender, RoutedEventArgs e)
         {
@@ -98,5 +101,16 @@ namespace OblligatorioInterfaces3
             Olvidar o = new Olvidar();
             o.Show();
         }
+        /*private void ver(object sender, RoutedEventArgs e)
+        {
+            BaseDatos bd = new BaseDatos();
+            Entrar en=new 
+            adaptador = new MySqlDataAdapter("SELECT * from users", bd.Conectar);
+            tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dato.ItemsSource = tablon.DefaultView;
+            dBConnect.CerrarConectar();
+        }
+    }*/
     }
 }

@@ -20,7 +20,7 @@
         </Label>
         <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold">Bienvenido a Salesianos</TextBlock>
         
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2">
+        <DataGrid x:Name="data"  d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="300" Header="Usuario"></DataGridTextColumn>
                 <DataGridTextColumn Width="300" Header="Email"></DataGridTextColumn>

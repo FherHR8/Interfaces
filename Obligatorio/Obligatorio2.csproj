@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.PDF" Version="23.11.0" />
+    <PackageReference Include="itext7" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="actualizar.jpg" />
     <Resource Include="consultar.jpg" />
     <Resource Include="fondo.jpg" />

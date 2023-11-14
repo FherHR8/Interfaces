@@ -23,6 +23,8 @@ namespace Obligatorio2
         public MainWindow()
         {
             InitializeComponent();
+            string rutaPDF = "C:\\EXAMENINTERFACES.pdf";
+            webBrowser.Source = new Uri(rutaPDF);
         }
         private void Salir(object sender, RoutedEventArgs e)
         {
@@ -33,7 +35,6 @@ namespace Obligatorio2
                 Application.Current.Shutdown();
             }
         }
-
         private void Alta(object sender, RoutedEventArgs e)
         {
             alta ventana = new alta();

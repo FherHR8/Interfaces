@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Desktop\\Lunes23\\Obligatorio2\\Obligatorio2.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\Obligatorio\\Obligatorio2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Desktop\\Lunes23\\Obligatorio2\\Obligatorio2.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\Obligatorio\\Obligatorio2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\Lunes23\\Obligatorio2\\Obligatorio2.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\Obligatorio\\Obligatorio2.csproj",
         "projectName": "Obligatorio2",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\Lunes23\\Obligatorio2\\Obligatorio2.csproj",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\Obligatorio\\Obligatorio2.csproj",
         "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\Lunes23\\Obligatorio2\\obj\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\Obligatorio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Aspose.PDF": {
+              "target": "Package",
+              "version": "[23.11.0, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -20,5 +20,6 @@
             </MenuItem>
         </Menu>
         <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Text="GESTION DE LA EMPRESA" Width="600" Height="300" Margin="0,0,0,0" Padding="20" FontSize="96" HorizontalAlignment="Center" Background="#FFD7E6E6"/>
+        <WebBrowser x:Name="webBrowser"  Width="600" DockPanel.Dock="Left"/>
     </DockPanel>
 </Window>
