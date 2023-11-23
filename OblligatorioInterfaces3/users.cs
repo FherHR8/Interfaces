@@ -20,7 +20,7 @@ namespace OblligatorioInterfaces3
             this.Username = username;
             this.Password = password;
             this.Email = email;
-            this.Puntos = obtenerPuntos();
+            this.Puntos = 0;
             this.Rol = false;
         }
         private int obtenerPuntos()

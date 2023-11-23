@@ -30,7 +30,7 @@ namespace OblligatorioInterfaces3
         public void Iniciar()
         {
             Servidor = "localhost";
-            BaseD = "interfaces3";
+            BaseD = "biblioteca";
             Nombre = "root";
             Contrasena = "";
             string cadenaConectar = "SERVER=" + Servidor + ";" + "DATABASE=" + BaseD + ";" + "UID=" + Nombre + ";" + "PASSWORD=" + Contrasena + ";";
