@@ -59,7 +59,7 @@ namespace OblligatorioInterfaces3
         }
         public void InsertarPreguntas(Actividad[] actividades, int iden, int tema)
         {
-            actividades[0].Pregunta = pregunta1.Text;
+            actividades[0].Pregunta = pregunta1.Text.ToString;
             actividades[0].Verdadera=verdadera1.Text;
             actividades[0].Respuesta1 = erronea11.Text;
             actividades[0].Respuesta2 = erronea12.Text;

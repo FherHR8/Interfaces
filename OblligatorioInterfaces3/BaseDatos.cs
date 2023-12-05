@@ -132,22 +132,17 @@ namespace OblligatorioInterfaces3
         //Obtenemos el id de usuario a partir del máximo de la tabla users, le voy a meter un parametro string para que me sirva en temas.
         public int ObtenerId(String tabla)
         {
-            int proximoId = 0;
+            int proximoId = 1;
             string consulta = "SELECT MAX(id) FROM "+tabla;
             if (this.AbrirConectar())
             {
                 MySqlCommand cmd = new MySqlCommand(consulta, Conectar);
                 Object obtener = cmd.ExecuteScalar();
-                if (obtener == null)
-                {
-                    obtener = 1;
-                }
-                else
+                if (obtener != null && obtener!= DBNull.Value)
                 {
                     proximoId = (int)obtener;
                     proximoId++;
-                }
-                
+                }     
             } 
             CerrarConectar();
             return proximoId;
