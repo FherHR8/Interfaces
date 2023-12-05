@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XnZk2hbFHTDHWfqWFiAwqj2/crBZ/JSXITBkrIgV0YEyXyz9LxmlA5cEHk8XoMg/snPtoXf/KPpEBvst26voXg==",
+  "dgSpecHash": "5+gUBOk3Vp0Pxqyi3kVjLoew0CS7DSjDKL4Zk8ctZjhFaICzVgG0QGZ1koWR7kqg+eYsDIRbXt9x9oz7cdYX6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alumno\\Desktop\\github\\InterfacesProyectoFinal1\\ProyectoFinal1Fernando\\OblligatorioInterfaces3\\OblligatorioInterfaces3.csproj",
+  "projectFilePath": "C:\\Users\\Alumno\\Desktop\\github\\Interfaces\\OblligatorioInterfaces3\\OblligatorioInterfaces3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alumno\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Alumno\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
