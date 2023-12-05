@@ -46,10 +46,8 @@ namespace OblligatorioInterfaces3
             {
                 MessageBox.Show("Adentro");
                 BaseDatos b = new BaseDatos();
-                int nuevoId = b.ObtenerId();
-                users u = new users (nuevoId, usuario, contrasena, email, puntos, false);
-                
-
+                int nuevoId = b.ObtenerId("users");
+                users u = new users (nuevoId, usuario, contrasena, email);
                 b.Insertar(u);
             }
         }

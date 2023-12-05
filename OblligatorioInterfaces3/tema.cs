@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OblligatorioInterfaces3
 {
-    internal class tema
+    public class tema
     {
         private int id;
         private string nombretema;
@@ -15,11 +15,16 @@ namespace OblligatorioInterfaces3
    
     public tema(int id, string nombretema, string contenido, int tiempo)
     {
-            this.id = id; ;
+            this.id = id;
             this.nombretema = nombretema;
             this.contenido = contenido;
             this.tiempo = tiempo;
     }
+        public tema()
+        {
+            
+        }
+        
 
         public int Id { get => id; set => id = value; }
         public string Nombretema { get => nombretema; set => nombretema = value; }

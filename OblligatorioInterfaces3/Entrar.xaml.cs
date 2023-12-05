@@ -1,8 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,60 +25,98 @@ namespace OblligatorioInterfaces3
     /// </summary>
     public partial class Entrar : Window
     {
+        BaseDatos dBConnect=new BaseDatos();
         MySqlDataAdapter adaptador;
         DataTable tabla;
         public Entrar()
         {
             InitializeComponent();
-            ver();
-            MessageBox.Show("cosa");
+            ver(); // si aqui es donde cargo el formulario aqui es donde compruebo y hago todo    
         }
-        /*private void ver()
-        {
-            BaseDatos bd = new BaseDatos();
-            adaptador = new MySqlDataAdapter("SELECT username,email,puntos from users", bd.Conectar);
-            tabla = new DataTable();
-            adaptador.Fill(tabla);
-            if(tabla.Rows.Count > 0 )
-            {
-                data.ItemsSource = tabla.DefaultView;
-                MessageBox.Show("Hola");
-            }
-            bd.CerrarConectar();
-        }*/
         private void ver()
         {
-            BaseDatos bd = new BaseDatos();
-            adaptador = new MySqlDataAdapter("SELECT username,email,puntos from users", bd.Conectar);
+            adaptador = new MySqlDataAdapter("SELECT username,email,puntos FROM users", dBConnect.Conectar);
             tabla = new DataTable();
             adaptador.Fill(tabla);
-
-            // Configurar las columnas del DataGrid
-            DataGridTextColumn colUsuario = new DataGridTextColumn();
-            colUsuario.Width = 300;
-            colUsuario.Header = "Usuario";
-            colUsuario.Binding = new Binding("username");
-            data.Columns.Add(colUsuario);
-
-            DataGridTextColumn colEmail = new DataGridTextColumn();
-            colEmail.Width = 300;
-            colEmail.Header = "Email";
-            colEmail.Binding = new Binding("email");
-            data.Columns.Add(colEmail);
-
-            DataGridTextColumn colPuntuacion = new DataGridTextColumn();
-            colPuntuacion.Width = 200;
-            colPuntuacion.Header = "Puntuación";
-            colPuntuacion.Binding = new Binding("puntos");
-            data.Columns.Add(colPuntuacion);
-
-            if (tabla.Rows.Count > 0)
-            {
-                data.ItemsSource = tabla.DefaultView;
-                MessageBox.Show("Hola");
-            }
-            bd.CerrarConectar();
+            // Enlaza el DataGrid con el DataTable
+            dbDataGrid.ItemsSource = tabla.DefaultView;
         }
 
+        private void actualizar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("¿Quieres realizar la actualización de esta tupla?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            
+            // Verifica la respuesta del usuario
+            if (result == MessageBoxResult.Yes)
+            {
+                int ind = obtenerIndice();
+                cambios(ind, "users");
+                MessageBox.Show("Usuario actualizado");
+                ver();
+            }
+            else
+            {
+                MessageBox.Show("De momento el usuario no se actualizará");
+            }
+        }
+        public void cambios(int indice, String tabla)
+        {
+            var itemElegido = dbDataGrid.Items[indice];
+            var usuario = dbDataGrid.Columns[0].GetCellContent(itemElegido) as TextBlock;
+            var emilio = dbDataGrid.Columns[1].GetCellContent(itemElegido) as TextBlock;
+            var puntos = dbDataGrid.Columns[2].GetCellContent(itemElegido) as TextBlock;
+            String u = usuario.Text;
+            String e = emilio.Text;
+            int p =int.Parse(puntos.Text);
+            int id=dBConnect.elegirId(indice, tabla, dBConnect);
+            string actualiza = "UPDATE " + tabla + " SET username= '" + u + "' , email = '" + e + "' , puntos = " + p + " where id= " + id;
+    if (dBConnect.AbrirConectar())
+    {
+        MySqlCommand cmd = new MySqlCommand(actualiza, dBConnect.Conectar);
+        cmd.ExecuteNonQuery();
+        dBConnect.CerrarConectar();
     }
+    MessageBox.Show("Tupla actualizada");
+}
+        private void borrar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("¿Quieres realizar el borrado de esta tupla?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            // Verifica la respuesta del usuario
+            if (result == MessageBoxResult.Yes)
+            {
+                int id = dBConnect.elegirId(obtenerIndice(), "users", dBConnect);
+                dBConnect.Borrar(id, "users", dBConnect);
+                MessageBox.Show("Usuario borrado");
+                ver();
+                ;
+            }
+            else
+            {
+                MessageBox.Show("De momento el usuario no se borrará");
+            }
+        }
+        public int obtenerIndice()
+        {
+            int selectedRow = -1;
+            {
+                // Verifica si hay una fila seleccionada
+                if (dbDataGrid.SelectedItem != null)
+                {
+                    // Obtiene la fila seleccionada
+                    var itemsSource = dbDataGrid.ItemsSource as IList;
+
+                    selectedRow = dbDataGrid.SelectedIndex;
+                    MessageBox.Show("" + selectedRow);
+
+                    //itemsSource.RemoveAt(dbDataGrid.SelectedIndex);
+                    // Elimina la fila de la colección de datos asociada al DataGrid
+                    // Ajusta según tu tipo de datos y nombre de columna del ID
+                }
+            }
+            return selectedRow;
+        }
+    }
+
+
 }

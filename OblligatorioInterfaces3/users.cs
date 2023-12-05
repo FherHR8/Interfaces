@@ -6,28 +6,24 @@ using System.Threading.Tasks;
 
 namespace OblligatorioInterfaces3
 {
-    internal class users
+    public class users
     {
-        private int id;
-        private string username;
-        private string password;
-        private string email;
-        private int puntos;
-        private bool rol;
-        public users(int id, string username, string password, string email, int puntos, bool rol)
+        public int id;
+        public string username;
+        public string password;
+        public string email;
+        public int puntos;
+        public string rol;
+       
+        public users() { }
+        public users(int id, string username, string password, string email)
         {
             this.Id = id;
             this.Username = username;
             this.Password = password;
             this.Email = email;
             this.Puntos = 0;
-            this.Rol = false;
-        }
-        private int obtenerPuntos()
-        {
-            Random aleatorio=new Random();
-            int puntos=aleatorio.Next(1,11);
-            return puntos;
+            this.Rol = "usuario";
         }
 
         public int Id { get => id; set => id = value; }
@@ -35,6 +31,6 @@ namespace OblligatorioInterfaces3
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
         public int Puntos { get => puntos; set => puntos = value; }
-        public bool Rol { get => rol; set => rol = value; }
+        public string Rol { get => rol; set => rol = value; }
     }
 }

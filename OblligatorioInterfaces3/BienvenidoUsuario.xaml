@@ -1,0 +1,20 @@
+﻿<Window x:Class="OblligatorioInterfaces3.BienvenidoUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OblligatorioInterfaces3"
+        mc:Ignorable="d"
+        Title="BienvenidoUsuario" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Bienvenido.jpg"/>
+        </Grid.Background>
+        <Label x:Name="bienvenida"  Content="BIENVENIDO USUARIO" HorizontalAlignment="Left" Margin="370,73,0,0" VerticalAlignment="Top" Background="#FFF6F4F4"/>
+        <Label x:Name="informacion"  Content="" HorizontalAlignment="Left" Margin="370,300,0,0" VerticalAlignment="Top" Background="#FFF6F4F4"/>
+        <Button x:Name="temas"   Content="TEMAS" HorizontalAlignment="Left" Margin="318,366,0,0" VerticalAlignment="Top" Click="temitas"/>
+        <Button x:Name="contrasena"   Content="CAMBIAR CONTRASEÑA" HorizontalAlignment="Left" Margin="436,366,0,0" VerticalAlignment="Top" Click="pass"/>
+        
+
+    </Grid>
+</Window>

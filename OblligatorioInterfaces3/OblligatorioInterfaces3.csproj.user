@@ -7,17 +7,35 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AgregarPreguntas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BienvenidoUsuario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Entrar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Olvidar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="opcionesAdministracion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Registro.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TemasAdministrar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AgregarPreguntas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BienvenidoUsuario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Entrar.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -27,7 +45,13 @@
     <Page Update="Olvidar.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="opcionesAdministracion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Registro.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TemasAdministrar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

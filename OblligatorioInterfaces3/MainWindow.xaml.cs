@@ -23,70 +23,29 @@ namespace OblligatorioInterfaces3
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        users u=new users();
+        BaseDatos b=new BaseDatos();
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        private bool login()
+        private void entrar(object sender, RoutedEventArgs e)
         {
-            bool login = false;
-            BaseDatos b = new BaseDatos();
-            string ema = "";
-            string con = "";
-            string consulta = "SELECT password,email from users where password like '" + contrasena.Text + "' and email like '" + email.Text + "'";
-            if (b.AbrirConectar())
+            if (b.login(email.Text,contrasena.Text, b, u))
             {
-                MySqlCommand cmd = new MySqlCommand(consulta, b.Conectar);
-                MySqlDataReader lector = cmd.ExecuteReader();
-                if (lector.Read())
+                //aquí no muestro la ventana....si luego sigo haciendo cosas...
+                //tendrias que comprobar si es admin antes de mostrar los datos.
+                if (u.Rol == "admin")
                 {
-                    con = lector["password"].ToString();
-                    ema = lector["email"].ToString();
-
-                    return true;
+                    opcionesAdministracion oa = new opcionesAdministracion();
+                    oa.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Correo y contraseña no coinciden");
-                }
-            }
-            return login;
-        }
-        private bool admin(Entrar en)
-        {
-            bool es = false;
-            BaseDatos b = new BaseDatos();
-            string ema = email.Text;
-            string consulta = "SELECT rol from users where email like '" + email.Text + "'";
-            if (b.AbrirConectar())
-            {
-                MySqlCommand cmd = new MySqlCommand(consulta, b.Conectar);
-                MySqlDataReader lector = cmd.ExecuteReader();
-                if (lector.Read())
-                {
-                    ema = lector["rol"].ToString();
-                    MessageBox.Show(ema);
-                    if (ema.Equals("Administrador"))
-                    {
-                        es = true;
-                    }
-
-                }
-
-            }
-            return es;
-        }
-        private void entrar(object sender, RoutedEventArgs e)
-        {
-            if (login())
-            {
-                Entrar en = new Entrar();
-                en.Show();
-                if (!admin(en))
-                {
-                    en.data.Visibility = Visibility.Hidden;
+                    BienvenidoUsuario bu = new BienvenidoUsuario(u);
+                    bu.Show();
                 }
             }
         }
@@ -95,22 +54,10 @@ namespace OblligatorioInterfaces3
             Registro r = new Registro();
             r.Show();
         }
-
         private void olvidaContra(object sender, RoutedEventArgs e)
         {
             Olvidar o = new Olvidar();
             o.Show();
         }
-        /*private void ver(object sender, RoutedEventArgs e)
-        {
-            BaseDatos bd = new BaseDatos();
-            Entrar en=new 
-            adaptador = new MySqlDataAdapter("SELECT * from users", bd.Conectar);
-            tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dato.ItemsSource = tablon.DefaultView;
-            dBConnect.CerrarConectar();
-        }
-    }*/
     }
 }

@@ -19,12 +19,23 @@
             </Label.Background>
         </Label>
         <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold">Bienvenido a Salesianos</TextBlock>
-        
-        <DataGrid x:Name="data"  d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Visibility="Visible">
+        <DataGrid x:Name="dbDataGrid" d:ItemsSource="{d:SampleData ItemCount=6}"  Margin="131,109,116,35" Grid.RowSpan="3" Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="300" Header="Usuario"></DataGridTextColumn>
-                <DataGridTextColumn Width="300" Header="Email"></DataGridTextColumn>
-                <DataGridTextColumn Width="200" Header="Puntuación"></DataGridTextColumn>
+                <!-- Otras columnas si las tienes -->
+                <DataGridTextColumn Header="Usuario" x:Name="us" Binding="{Binding Path=username}" Width="125" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=email}" Width="125" x:Name="em"/>
+                <DataGridTextColumn Header="Puntuación" Binding="{Binding Path=puntos}" Width="125" x:Name="pu"/>
+                <!-- Columna para los botones -->
+                <DataGridTemplateColumn Header="Acciones">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="opciones" Orientation="Horizontal" >
+                                <Button x:Name="actualizar" Content="EDITAR" Margin="10,0,10,0" Click="actualizar_Click"/>
+                                <Button x:Name="borrar" Content="ELIMINAR" Click="borrar_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Bienvenido.jpg" />
     <None Remove="bloquear.png" />
     <None Remove="can.png" />
     <None Remove="candado.png" />
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Bienvenido.jpg" />
     <Resource Include="bloquear.png" />
     <Resource Include="can.png" />
     <Resource Include="candado.png" />
