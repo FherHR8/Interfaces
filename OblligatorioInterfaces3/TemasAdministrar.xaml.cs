@@ -63,19 +63,6 @@ namespace OblligatorioInterfaces3
             MessageBox.Show(ru);
             return ru;
         }
-        /*private void verpdf(object sender, RoutedEventArgs e)
-        {
-            string rut=obtenerRuta(obtenerIndice());
-            try
-            {   
-                MessageBox.Show("C:\\Users\\fervi\\Desktop\\InterfacesProyectoFinal\\ProyectoFinal1Fernando\\OblligatorioInterfaces3\\" + rut);
-                System.Diagnostics.Process.Start(@"C:\Users\\fervi\Desktop\InterfacesProyectoFinal\ProyectoFinal1Fernando\OblligatorioInterfaces3\" + rut);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al abrir el PDF: " + ex.Message);
-            }
-        }*/
 
         private void agregar(object sender, RoutedEventArgs e)
         {

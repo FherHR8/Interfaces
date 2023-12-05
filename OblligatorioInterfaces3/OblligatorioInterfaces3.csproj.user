@@ -22,10 +22,16 @@
     <Compile Update="opcionesAdministracion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RecuperarContra.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Registro.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TemasAdministrar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UsuarioTema.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -48,10 +54,16 @@
     <Page Update="opcionesAdministracion.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="RecuperarContra.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Registro.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TemasAdministrar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UsuarioTema.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

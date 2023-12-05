@@ -20,10 +20,7 @@ namespace OblligatorioInterfaces3
             this.contenido = contenido;
             this.tiempo = tiempo;
     }
-        public tema()
-        {
-            
-        }
+        public tema(){  }
         
 
         public int Id { get => id; set => id = value; }

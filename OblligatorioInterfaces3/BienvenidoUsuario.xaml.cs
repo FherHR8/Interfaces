@@ -27,12 +27,32 @@ namespace OblligatorioInterfaces3
 
         private void temitas(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("¿Quieres ir a tus temas?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                UsuarioTema ut= new UsuarioTema();
+                ut.Show();
+            }
+            else
+            {
+                MessageBox.Show("No vamos a temas");
+            }
         }
-
         private void pass(object sender, RoutedEventArgs e)
         {
-
+            {
+                MessageBoxResult result = MessageBox.Show("¿De verdad quieres recuperar la constraseña?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    RecuperarContra rc = new RecuperarContra();
+                    rc.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No recuperaremos la constraseña");
+                }
+            }
+            
         }
     }
 }
