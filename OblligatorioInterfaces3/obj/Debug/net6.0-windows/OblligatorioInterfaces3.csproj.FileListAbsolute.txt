@@ -257,3 +257,11 @@ C:\Users\Alumno\Desktop\github\InterfacesProyectoFinal1\ProyectoFinal1Fernando\O
 C:\Users\Alumno\Desktop\github\InterfacesProyectoFinal1\ProyectoFinal1Fernando\OblligatorioInterfaces3\obj\Debug\net6.0-windows\ref\OblligatorioInterfaces3.dll
 C:\Users\Alumno\Desktop\github\InterfacesProyectoFinal1\ProyectoFinal1Fernando\OblligatorioInterfaces3\obj\Debug\net6.0-windows\AgregarPreguntas.g.cs
 C:\Users\Alumno\Desktop\github\InterfacesProyectoFinal1\ProyectoFinal1Fernando\OblligatorioInterfaces3\obj\Debug\net6.0-windows\AgregarPreguntas.baml
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\AgregarPreguntas.g.cs
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\BienvenidoUsuario.g.cs
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\opcionesAdministracion.g.cs
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\TemasAdministrar.g.cs
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\AgregarPreguntas.baml
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\BienvenidoUsuario.baml
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\opcionesAdministracion.baml
+C:\Users\Alumno\Desktop\github\Interfaces\OblligatorioInterfaces3\obj\Debug\net6.0-windows\TemasAdministrar.baml

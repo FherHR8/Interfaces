@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Bienvenido.jpg" />
+    <None Remove="bloquear.png" />
+    <None Remove="can.png" />
+    <None Remove="candado.png" />
+    <None Remove="correo.png" />
+    <None Remove="fachada.jpg" />
+    <None Remove="llave.png" />
+    <None Remove="logo.png" />
+    <None Remove="persona.png" />
+    <None Remove="Salesianos.jpg" />
+    <None Remove="sobre.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Bienvenido.jpg" />
+    <Resource Include="bloquear.png" />
+    <Resource Include="can.png" />
+    <Resource Include="candado.png" />
+    <Resource Include="correo.png" />
+    <Resource Include="fachada.jpg" />
+    <Resource Include="llave.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="persona.png" />
+    <Resource Include="Salesianos.jpg" />
+    <Resource Include="sobre.png" />
+  </ItemGroup>
+
+</Project>
